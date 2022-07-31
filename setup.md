@@ -24,6 +24,7 @@ sudo dnf install -y \
   neovim \
   nodejs \
   ocl-icd-devel \
+  perl-FindBin \
   ripgrep \
   ruby \
   rust-analyzer \
@@ -69,7 +70,14 @@ Plugins:
 ### Fonts
 Need to install nerd fonts from [here](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CodeNewRoman).
 
-### Cargo binaries
+### Rust
+
+cargo binaries
 ```
-cargo install cargo-watch cargo-edit cargo-audit
+cargo install cargo-watch cargo-edit cargo-audit cargo-generate
+```
+
+wasm-pack
+```
+curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 ```
