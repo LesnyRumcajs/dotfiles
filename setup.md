@@ -68,3 +68,8 @@ Plugins:
 
 ### Fonts
 Need to install nerd fonts from [here](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CodeNewRoman).
+
+### Cargo binaries
+```
+cargo install cargo-watch cargo-edit cargo-audit
+```
