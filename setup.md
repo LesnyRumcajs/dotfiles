@@ -65,3 +65,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 Plugins:
 - git aliases: `omf install https://github.com/jhillyerd/plugin-git`
 - bang bang (i.e. `sudo !!`): `omf install bang-bang`
+
+### Fonts
+Need to install nerd fonts from [here](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CodeNewRoman).
