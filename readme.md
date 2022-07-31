@@ -8,3 +8,5 @@ The templates require a config file in `$HOME/.config/chezmoi/chezmoi.toml`
     full_name = "<full name>"
     email = "<email address>"
 ```
+
+Other setup steps can be found [here](setup.md).
