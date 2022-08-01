@@ -12,6 +12,7 @@ sudo dnf install -y \
   alacritty \
   bat \
   bottom \
+  cmake \
   containerd.io \
   docker-ce-cli \
   docker-compose-plugin \
