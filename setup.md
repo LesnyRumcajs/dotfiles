@@ -2,16 +2,19 @@
 A part of my personal setup. It contains packages specific to my workflow and hardware.
 
 ### Dotfiles
-Manually install `chezmoi`, then populate the `chezmoi.toml`. Then: `$ chezmoi init --apply --verbose https://github.com/LesnyRumcajs/dotfiles.git`
+Manually install `chezmoi`, then populate the `chezmoi.toml`. Then: `$ chezmoi init --apply --verbose https://github.com/LesnyRumcajs/dotfiles.git` or just install & init ` sh -c "$(curl -fsLS https://chezmoi.io/get)" -- init --apply LesnyRumcajs`
 
 ### Packages (Fedora)
-```
+```shell 
 sudo dnf copr enable atim/bottom -y
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+
 sudo dnf group install -y "C Development Tools and Libraries" "Development Tools"
 sudo dnf install -y \
   alacritty \
   bat \
   bottom \
+  clang-devel \
   cmake \
   containerd.io \
   docker-ce-cli \
@@ -28,10 +31,12 @@ sudo dnf install -y \
   perl-FindBin \
   ripgrep \
   ruby \
-  rust-analyzer \
   sd \
+  starship \
   tealdeer \
   tmux \
+  util-linux-user \
+  wget \
   zoxide
 ```
 
@@ -61,6 +66,7 @@ Install `Plug`
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
+launch `nvim` and execute `:PlugInstall` to install the dependencies.
 
 ### fish
 [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish): `curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish`
@@ -72,6 +78,11 @@ Plugins:
 Need to install nerd fonts from [here](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CodeNewRoman).
 
 ### Rust
+
+install rust
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
 
 cargo binaries
 ```
