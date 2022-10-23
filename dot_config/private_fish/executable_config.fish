@@ -4,6 +4,7 @@ end
 
 set -gx EDITOR /usr/bin/nvim
 set -gx VISUAL /usr/bin/nvim
+set -gx PATH "$HOME/bin" $PATH
 set -gx PATH "$HOME/.cargo/bin" $PATH
 set -gx PATH "$HOME/.local/bin" $PATH
 
