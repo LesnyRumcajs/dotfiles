@@ -39,6 +39,11 @@ sudo dnf install -y \
   zoxide
 ```
 
+### Make fish the default shell
+```
+chsh -s /usr/local/bin/fish
+```
+
 ### Nvidia drivers (Fedora)
 ```
 sudo dnf install -y akmod-nvidia xorg-x11-drv-nvidia-cuda
