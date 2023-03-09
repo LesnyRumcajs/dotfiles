@@ -41,7 +41,7 @@ sudo dnf install -y \
 
 ### Make fish the default shell
 ```
-chsh -s /usr/local/bin/fish
+chsh -s /usr/bin/fish
 ```
 
 ### Nvidia drivers (Fedora)
