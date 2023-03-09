@@ -32,7 +32,6 @@ sudo dnf install -y \
   ripgrep \
   ruby \
   sd \
-  starship \
   tealdeer \
   tmux \
   util-linux-user \
