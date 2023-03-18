@@ -1,12 +1,14 @@
 [user]
 name = {{ .full_name }}
 email = {{ .email }}
+signingkey = {{ .pubkey }}
 
 [commit]
 gpgsign = true
 
 [core]
 pager = delta
+autocrlf = input
 
 [interactive]
 diffFilter = delta --color-only
@@ -29,3 +31,6 @@ rebase = true
 
 [fetch]
 prune = true
+
+[gpg]
+format = ssh

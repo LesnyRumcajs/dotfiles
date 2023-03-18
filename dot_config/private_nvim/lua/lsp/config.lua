@@ -3,7 +3,7 @@ local nvim_lsp = require 'lspconfig'
 local opts = {
   tools = { -- rust-tools options
     autoSetHints = true,
-    hover_with_actions = true,
+    lua_ls = true,
     inlay_hints = {
       show_parameter_hints = false,
       parameter_hints_prefix = "",
@@ -59,7 +59,7 @@ require 'lspconfig'.solargraph.setup {
 }
 -- Dockerfile
 require 'lspconfig'.dockerls.setup {}
-require 'lspconfig'.sumneko_lua.setup {
+require 'lspconfig'.lua_ls.setup {
   Lua = {
     format = {
       enable = true,
