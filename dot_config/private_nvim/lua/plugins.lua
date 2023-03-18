@@ -1,66 +1,83 @@
-local Plug = vim.fn['plug#']
-vim.call('plug#begin', '~/.local/share/nvim/plugged')
+-- Setup Lazy package manager
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- Plugin list
+plugins = {
 -- Collection of common configurations for the Nvim LSP client
-Plug 'neovim/nvim-lspconfig'
+'neovim/nvim-lspconfig',
 -- Pretty UI
-Plug('glepnir/lspsaga.nvim', { branch = 'main' })
+{'glepnir/lspsaga.nvim', branch = 'main' },
 -- Completion framework
-Plug 'hrsh7th/nvim-cmp'
+'hrsh7th/nvim-cmp',
 
 -- LSP completion source for nvim-cmp
-Plug 'hrsh7th/cmp-nvim-lsp'
+'hrsh7th/cmp-nvim-lsp',
 
 -- Snippet completion source for nvim-cmp
-Plug 'hrsh7th/cmp-vsnip'
+'hrsh7th/cmp-vsnip',
 
 -- package manager
-Plug 'williamboman/mason.nvim'
+'williamboman/mason.nvim',
 
 -- Other usefull completion sources
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-buffer'
+'hrsh7th/cmp-path',
+'hrsh7th/cmp-buffer',
 
 -- See hrsh7th's other plugins for more completion sources!
 
 -- To enable more of the features of rust-analyzer, such as inlay hints and more!
-Plug 'simrat39/rust-tools.nvim'
+'simrat39/rust-tools.nvim',
 
 -- Snippet engine
-Plug 'hrsh7th/vim-vsnip'
+'hrsh7th/vim-vsnip',
 
 -- Fuzzy finder
 -- Optional
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug('nvim-telescope/telescope.nvim', { tag = '0.1.0' })
+'nvim-lua/popup.nvim',
+'nvim-lua/plenary.nvim',
+{'nvim-telescope/telescope.nvim', tag = '0.1.0' },
 
 -- Git wrapper
-Plug 'https://github.com/tpope/vim-fugitive'
+'https://github.com/tpope/vim-fugitive',
 -- Color scheme
-Plug 'morhetz/gruvbox'
+'morhetz/gruvbox',
 -- Nice status tabline
-Plug 'vim-airline/vim-airline'
+'vim-airline/vim-airline',
 -- Differences between directories, e.g. :DirDiff
-Plug 'will133/vim-dirdiff'
+'will133/vim-dirdiff',
 -- Comment out code
-Plug 'preservim/nerdcommenter'
+'preservim/nerdcommenter',
 -- Trailing whitespace obliterator
-Plug 'csexton/trailertrash.vim'
+'csexton/trailertrash.vim',
 -- File explorer
-Plug 'preservim/nerdtree'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-unimpaired'
+'preservim/nerdtree',
+'airblade/vim-gitgutter',
+'tpope/vim-unimpaired',
 -- Nice git branches
-Plug 'idanarye/vim-merginal'
+'idanarye/vim-merginal',
 -- Github integration (:GBrowse)
-Plug 'tpope/vim-rhubarb'
+'tpope/vim-rhubarb',
 -- Git commit browser
-Plug 'junegunn/gv.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'tpope/vim-surround'
+'junegunn/gv.vim',
+'ryanoasis/vim-devicons',
+'tpope/vim-surround',
 
 -- In-vim unit tests
-Plug 'klen/nvim-test'
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
+'klen/nvim-test',
+{'nvim-treesitter/nvim-treesitter', cmd = 'TSUpdate' },
+}
 
-vim.call('plug#end')
+
+-- Actually invoke Lazy
+require("lazy").setup(plugins, opts)
