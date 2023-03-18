@@ -2,7 +2,7 @@
 A part of my personal setup. It contains packages specific to my workflow and hardware.
 
 ### Dotfiles
-Manually install `chezmoi`, then populate the `chezmoi.toml`. Then: `$ chezmoi init --apply --verbose https://github.com/LesnyRumcajs/dotfiles.git` or just install & init ` sh -c "$(curl -fsLS https://chezmoi.io/get)" -- init --apply LesnyRumcajs`
+Manually install `chezmoi`, then populate the `chezmoi.toml`. Then: `$ chezmoi init --apply --verbose git@github.com:LesnyRumcajs/dotfiles.git` or just install & init ` sh -c "$(curl -fsLS https://chezmoi.io/get)" -- init --apply LesnyRumcajs`
 
 ### Packages (Fedora)
 ```shell 
