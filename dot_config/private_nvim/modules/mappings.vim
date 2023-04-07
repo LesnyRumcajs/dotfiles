@@ -23,7 +23,9 @@ map <C-K> :bprev<CR>
 map <C-J> :bnext<CR>
 
 " NerdTree toggle
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NvimTreeFindFile<CR>
+" map <C-N> :NvimTreeToggle<CR>
 
 " Code navigation shortcuts
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>

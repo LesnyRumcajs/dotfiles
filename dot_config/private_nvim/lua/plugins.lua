@@ -61,7 +61,9 @@ plugins = {
 -- Trailing whitespace obliterator
 'csexton/trailertrash.vim',
 -- File explorer
-'preservim/nerdtree',
+-- 'preservim/nerdtree',
+'nvim-tree/nvim-tree.lua',
+'nvim-tree/nvim-web-devicons',
 'airblade/vim-gitgutter',
 'tpope/vim-unimpaired',
 -- Nice git branches
@@ -72,12 +74,60 @@ plugins = {
 'junegunn/gv.vim',
 'ryanoasis/vim-devicons',
 'tpope/vim-surround',
+'github/copilot.vim',
 
 -- In-vim unit tests
 'klen/nvim-test',
 {'nvim-treesitter/nvim-treesitter', cmd = 'TSUpdate' },
+
+
 }
 
 
 -- Actually invoke Lazy
 require("lazy").setup(plugins, opts)
+
+-- disable netrw at the very start of your init.lua (strongly advised)
+--vim.g.loaded_netrw = 1
+--vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
+-- empty setup using defaults
+require("nvim-tree").setup()
+
+-- enable copilot
+-- https://www.reddit.com/r/neovim/comments/sk70rk/using_github_copilot_in_neovim_tab_map_has_been/
+-- vim.g.copilot_assume_mapped = true
+
+---- might be useful later
+--   vim.g.copilot_filetypes = {
+--    ["*"] = false,
+--    ["javascript"] = true,
+--    ["typescript"] = true,
+--    ["lua"] = false,
+--    ["rust"] = true,
+--    ["c"] = true,
+--    ["c#"] = true,
+--    ["c++"] = true,
+--    ["go"] = true,
+--    ["python"] = true,
+--  }
+--
+
+-- try these
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_tab_fallback = ""
+local cmp = require "cmp"
+
+cmp.mapping["<C-e>"] = function(fallback)
+  cmp.mapping.abort()
+  local copilot_keys = vim.fn["copilot#Accept"]()
+  if copilot_keys ~= "" then
+    vim.api.nvim_feedkeys(copilot_keys, "i", true)
+  else
+    fallback()
+  end
+end
