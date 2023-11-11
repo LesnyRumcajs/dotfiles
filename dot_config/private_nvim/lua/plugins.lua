@@ -46,7 +46,7 @@ plugins = {
 -- Optional
 'nvim-lua/popup.nvim',
 'nvim-lua/plenary.nvim',
-{'nvim-telescope/telescope.nvim', tag = '0.1.0' },
+{'nvim-telescope/telescope.nvim', tag = '0.1.4' },
 
 -- Git wrapper
 'https://github.com/tpope/vim-fugitive',
