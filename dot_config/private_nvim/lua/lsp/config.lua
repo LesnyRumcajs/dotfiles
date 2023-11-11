@@ -90,6 +90,8 @@ require 'lspconfig'.lua_ls.setup {
     },
   },
 }
+-- Typescript
+require 'lspconfig'.tsserver.setup {}
 
 -- Setup Completion
 -- See https://github.com/hrsh7th/nvim-cmp#basic-configuration

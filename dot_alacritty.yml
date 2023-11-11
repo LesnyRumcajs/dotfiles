@@ -160,12 +160,13 @@ window:
 
 font:
   normal:
-    family: CodeNewRoman Nerd Font
+    family: CodeNewRoman Nerd Font Mono
+    style: regular
   bold:
-    family: CodeNewRoman Nerd Font
+    family: CodeNewRoman Nerd Font Mono
     style: Bold
   italic:
-    family: CodeNewRoman Nerd Font
+    family: CodeNewRoman Nerd Font Mono
     style: Italic
 
 
