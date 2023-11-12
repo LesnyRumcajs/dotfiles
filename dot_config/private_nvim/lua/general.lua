@@ -1,5 +1,8 @@
 local set = vim.opt
 
+-- Copy to system clipboard
+set.clipboard = "unnamedplus"
+
 -- Tabs are 2 spaces
 set.tabstop = 2
 set.shiftwidth = 2
