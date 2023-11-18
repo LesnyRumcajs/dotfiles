@@ -12,6 +12,10 @@ pubkey    = "<SSH public key>"
 [merge]
 command = "nvim"
 args = ["-d", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"]
+
+[diff]
+command = "delta"
+args = ["--color-only", "--features", "line-numbers", "--line-numbers", "--paging", "never"]
 ```
 
 Other setup steps can be found [here](setup.md).
