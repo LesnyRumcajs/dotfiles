@@ -8,6 +8,10 @@ The templates require a config file in `$HOME/.config/chezmoi/chezmoi.toml`
 full_name = "<full name>"
 email     = "<email address>"
 pubkey    = "<SSH public key>"
+
+[merge]
+command = "nvim"
+args = ["-d", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"]
 ```
 
 Other setup steps can be found [here](setup.md).
