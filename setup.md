@@ -51,15 +51,6 @@ chsh -s /usr/bin/fish
 sudo dnf install -y akmod-nvidia xorg-x11-drv-nvidia-cuda
 ```
 
-### Git
-```
-gpg --full-generate-key
-gpg --list-secret-keys --keyid-format=long
-gpg --armor --export XXX
-
-... then import in Github
-```
-
 ### tmux
 Plugins manager:
 ```
