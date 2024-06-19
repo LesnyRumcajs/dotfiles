@@ -7,7 +7,7 @@ The templates require a config file in `$HOME/.config/chezmoi/chezmoi.toml`
 [data]
 full_name = "<full name>"
 email     = "<email address>"
-pubkey    = "<SSH public key>"
+pubkey    = "<path to the public SSH key>"
 
 [merge]
 command = "nvim"
