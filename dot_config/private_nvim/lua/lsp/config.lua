@@ -30,6 +30,24 @@ local opts = {
   },
 }
 
+require('lspconfig').rust_analyzer.setup {
+  -- Other Configs ...
+  settings = {
+    ["rust-analyzer"] = {
+      -- Other Settings ...
+      procMacro = {
+        ignored = {
+            leptos_macro = {
+                -- optional: --
+                -- "component",
+                "server",
+            },
+        },
+      },
+    },
+  }
+}
+
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
