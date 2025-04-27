@@ -8,10 +8,6 @@ set -gx PATH "$HOME/bin" $PATH
 set -gx PATH "$HOME/.cargo/bin" $PATH
 set -gx PATH "$HOME/.local/bin" $PATH
 set -gx PATH "$HOME/go/bin" $PATH
-set -gx PATH "$HOME/.foundry/bin" $PATH
-set -gx PATH "$HOME/.npm/lib/bin" $PATH
-set -gx PATH "$HOME/.node/bin:$PATH"
-set -gx NODE_PATH "$HOME/.node/lib/node_modules:$NODE_PATH"
 
 alias v="nvim"
 

@@ -3,13 +3,13 @@ local nvim_lsp = require 'lspconfig'
 -- Workaround for LSP: rust_analyzer: -32802: server cancelled the request
 -- https://github.com/neovim/neovim/issues/30985#issuecomment-2447329525
 for _, method in ipairs({ 'textDocument/diagnostic', 'workspace/diagnostic' }) do
-    local default_diagnostic_handler = vim.lsp.handlers[method]
-    vim.lsp.handlers[method] = function(err, result, context, config)
-        if err ~= nil and err.code == -32802 then
-            return
-        end
-        return default_diagnostic_handler(err, result, context, config)
+  local default_diagnostic_handler = vim.lsp.handlers[method]
+  vim.lsp.handlers[method] = function(err, result, context, config)
+    if err ~= nil and err.code == -32802 then
+      return
     end
+    return default_diagnostic_handler(err, result, context, config)
+  end
 end
 
 local opts = {
@@ -53,11 +53,11 @@ require('lspconfig').rust_analyzer.setup {
       -- Other Settings ...
       procMacro = {
         ignored = {
-            leptos_macro = {
-                -- optional: --
-                -- "component",
-                "server",
-            },
+          leptos_macro = {
+            -- optional: --
+            -- "component",
+            "server",
+          },
         },
       },
     },
@@ -65,9 +65,9 @@ require('lspconfig').rust_analyzer.setup {
 }
 
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "all",    -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
-    enable = true, -- false will disable the whole extension
+    enable = true,             -- false will disable the whole extension
     disable = { "c", "rust" }, -- list of language that will be disabled
   },
 }
@@ -81,6 +81,18 @@ require("mason").setup()
 -- Rust
 require('rust-tools').setup(opts)
 require("nvim-test").setup {}
+local configs = require 'lspconfig.configs'
+
+configs.solidity = {
+  default_config = {
+    cmd = { 'nomicfoundation-solidity-language-server', '--stdio' },
+    filetypes = { 'solidity' },
+    root_dir = require 'lspconfig'.util.find_git_ancestor,
+    single_file_support = true,
+  },
+}
+
+require 'lspconfig'.solidity.setup {}
 -- Go
 require 'lspconfig'.gopls.setup {}
 -- Ruby
