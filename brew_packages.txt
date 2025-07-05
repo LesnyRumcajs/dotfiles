@@ -7,10 +7,13 @@ fd
 fish
 fnm
 fzf
+glances
 go
+gtop
 htop
 mc
 neovim
+procs
 rg
 ripgrep
 sd
