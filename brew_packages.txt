@@ -1,5 +1,6 @@
 bat
 bottom
+broot
 chezmoi
 delta
 fd
