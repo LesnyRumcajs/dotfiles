@@ -26,6 +26,7 @@ sudo dnf install -y \
   hexyl \
   htop \
   lsd \
+  meld \
   mc \
   neovim \
   nodejs \
