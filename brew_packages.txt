@@ -10,6 +10,7 @@ fzf
 glances
 go
 gtop
+hexyl
 htop
 mc
 neovim

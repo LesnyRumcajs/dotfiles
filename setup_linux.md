@@ -23,6 +23,7 @@ sudo dnf install -y \
   fd-find \
   fish \
   golang \
+  hexyl \
   htop \
   lsd \
   mc \
