@@ -1,76 +1,18 @@
 local nvim_lsp = require 'lspconfig'
 
--- Workaround for LSP: rust_analyzer: -32802: server cancelled the request
--- https://github.com/neovim/neovim/issues/30985#issuecomment-2447329525
-for _, method in ipairs({ 'textDocument/diagnostic', 'workspace/diagnostic' }) do
-    local default_diagnostic_handler = vim.lsp.handlers[method]
-    vim.lsp.handlers[method] = function(err, result, context, config)
-        if err ~= nil and err.code == -32802 then
-            return
-        end
-        return default_diagnostic_handler(err, result, context, config)
-    end
-    return default_diagnostic_handler(err, result, context, config)
-end
-
-local opts = {
-  tools = { -- rust-tools options
-    autoSetHints = true,
-    lua_ls = true,
-    inlay_hints = {
-      show_parameter_hints = false,
-      parameter_hints_prefix = "",
-      other_hints_prefix = "",
-    },
-  },
-
-  -- all the opts to send to nvim-lspconfig
-  -- these override the defaults set by rust-tools.nvim
-  -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
-  server = {
-    -- on_attach is a callback called when the language server attachs to the buffer
-    -- on_attach = on_attach,
-    settings = {
-      -- to enable rust-analyzer settings visit:
-      -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
-      ["rust-analyzer"] = {
-        -- enable clippy on save
-        checkOnSave = true,
-        diagnostic = {
-          refreshSupport = false
-        },
-        -- Other Configs ...
-        procMacro = {
-          ignored = {
-            leptos_macro = {
-              -- optional: --
-              -- "component",
-              "server",
-            },
-          },
-        },
-      },
-    },
-  },
-}
-
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = "all",    -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
-    enable = true, -- false will disable the whole extension
+    enable = true,             -- false will disable the whole extension
     disable = { "c", "rust" }, -- list of language that will be disabled
   },
 }
 
 require("mason").setup()
 
--- Configure LSP through rust-tools.nvim plugin.
--- rust-tools will configure and enable certain LSP features for us.
--- See https://github.com/simrat39/rust-tools.nvim#configuration
--- More here: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
--- Rust
-require('rust-tools').setup(opts)
+-- General
 require("nvim-test").setup {}
+
 -- Go
 require 'lspconfig'.gopls.setup {}
 -- Ruby

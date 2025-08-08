@@ -17,7 +17,7 @@ plugins = {
   -- Collection of common configurations for the Nvim LSP client
   'neovim/nvim-lspconfig',
   -- Pretty UI
-  { 'glepnir/lspsaga.nvim',          branch = 'main' },
+  { 'glepnir/lspsaga.nvim',            branch = 'main' },
   -- Completion framework
   'hrsh7th/nvim-cmp',
 
@@ -34,11 +34,11 @@ plugins = {
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-buffer',
 
-  -- See hrsh7th's other plugins for more completion sources!
-
-  -- To enable more of the features of rust-analyzer, such as inlay hints and more!
-  'simrat39/rust-tools.nvim',
-
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^6', -- Recommended
+    lazy = false,   -- This plugin is already lazy
+  },
   -- Snippet engine
   'hrsh7th/vim-vsnip',
 
@@ -46,8 +46,7 @@ plugins = {
   -- Optional
   'nvim-lua/popup.nvim',
   'nvim-lua/plenary.nvim',
-  { 'nvim-telescope/telescope.nvim', tag = '0.1.4' },
-
+  'nvim-telescope/telescope.nvim',
   -- Git wrapper
   'https://github.com/tpope/vim-fugitive',
   -- Color scheme
