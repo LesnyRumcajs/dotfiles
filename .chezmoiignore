@@ -1,1 +1,4 @@
 *.md
+brew_packages.txt
+fish_plugins.txt
+install_fish_plugins.fish
