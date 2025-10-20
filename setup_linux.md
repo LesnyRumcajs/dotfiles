@@ -31,7 +31,6 @@ sudo dnf install -y \
   perl-FindBin \
   ripgrep \
   ruby \
-  sd \
   starship \
   tealdeer \
   tmux \
@@ -74,7 +73,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 cargo binaries
 ```
-cargo install cargo-watch cargo-edit cargo-audit cargo-generate
+cargo install cargo-watch cargo-edit cargo-audit cargo-generate sd
 ```
 
 wasm-pack
