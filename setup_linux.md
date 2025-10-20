@@ -8,7 +8,7 @@ Manually install `chezmoi`, then populate the `chezmoi.toml`. Then: `chezmoi ini
 ```shell 
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 
-sudo dnf group install -y "C Development Tools and Libraries" "Development Tools"
+sudo dnf group install -y c-development development-tools
 sudo dnf install -y \
   alacritty \
   bat \
