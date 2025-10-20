@@ -6,8 +6,6 @@ Manually install `chezmoi`, then populate the `chezmoi.toml`. Then: `$ chezmoi i
 
 ### Packages (Fedora)
 ```shell 
-sudo dnf copr enable atim/bottom -y
-sudo dnf copr enable atim/starship -y
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 
 sudo dnf group install -y "C Development Tools and Libraries" "Development Tools"
