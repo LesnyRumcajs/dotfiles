@@ -1,5 +1,5 @@
 ### Setup
-A part of my personal setup. It contains packages specific to my workflow and hardware.
+A part of my personal setup. It contains packages specific to my workflow and hardware. It's aimed at Rust development on Linux Fedora 42.
 
 ### Dotfiles
 Manually install `chezmoi`, then populate the `chezmoi.toml`. Then: `chezmoi init --apply --verbose git@github.com:LesnyRumcajs/dotfiles.git` or just install & init `sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply LesnyRumcajs`. More up-to-date instructions are at the [chezmoi website](https://www.chezmoi.io/).
