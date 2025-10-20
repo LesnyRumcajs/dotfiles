@@ -25,6 +25,7 @@ sudo dnf install -y \
   hexyl \
   htop \
   lsd \
+  luarocks \
   meld \
   mc \
   neovim \
