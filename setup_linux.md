@@ -52,9 +52,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ### fish
 [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish): `curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish`
-Plugins:
-- git aliases: `omf install https://github.com/jhillyerd/plugin-git`
-- bang bang (i.e. `sudo !!`): `omf install bang-bang`
+
+Run this installation [script](https://github.com/LesnyRumcajs/dotfiles/blob/master/install_fish_plugins.fish).
 
 ### Fonts
 Need to install nerd fonts from [here](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CodeNewRoman).
