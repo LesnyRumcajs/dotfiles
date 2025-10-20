@@ -1,5 +1,3 @@
-local nvim_lsp = require 'lspconfig'
-
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = "all",    -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
@@ -14,18 +12,19 @@ require("mason").setup()
 require("nvim-test").setup {}
 
 -- Go
-require 'lspconfig'.gopls.setup {}
+vim.lsp.config('gopls', {})
+
 -- Ruby
-require 'lspconfig'.solargraph.setup {
+vim.lsp.config('solargraph', {
   settings = {
     solargraph = {
       diagnostics = true
     }
   }
-}
+})
 -- Dockerfile
-require 'lspconfig'.dockerls.setup {}
-require 'lspconfig'.lua_ls.setup {
+vim.lsp.config('dockerls', {})
+vim.lsp.config('lua_ls', {
   Lua = {
     format = {
       enable = true,
@@ -55,9 +54,9 @@ require 'lspconfig'.lua_ls.setup {
       },
     },
   },
-}
+})
 -- Typescript
-require 'lspconfig'.ts_ls.setup {}
+vim.lsp.config('ts_ls', {})
 
 -- Setup Completion
 -- See https://github.com/hrsh7th/nvim-cmp#basic-configuration
