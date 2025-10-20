@@ -93,10 +93,6 @@ vim.opt.termguicolors = true
 -- empty setup using defaults
 require("nvim-tree").setup()
 
--- enable copilot
--- https://www.reddit.com/r/neovim/comments/sk70rk/using_github_copilot_in_neovim_tab_map_has_been/
--- vim.g.copilot_assume_mapped = true
-
 ---- might be useful later
 --   vim.g.copilot_filetypes = {
 --    ["*"] = false,
@@ -110,12 +106,6 @@ require("nvim-tree").setup()
 --    ["go"] = true,
 --    ["python"] = true,
 --  }
---
-
--- try these
-vim.g.copilot_no_tab_map = true
-vim.g.copilot_assume_mapped = true
-vim.g.copilot_tab_fallback = ""
 local cmp = require "cmp"
 
 cmp.mapping["<C-e>"] = function(fallback)
