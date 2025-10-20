@@ -6,7 +6,7 @@ Manually install `chezmoi`, then populate the `chezmoi.toml`. Then: `chezmoi ini
 
 ### Packages (Fedora)
 ```shell 
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 
 sudo dnf group install -y c-development development-tools
 sudo dnf install -y \
@@ -28,7 +28,6 @@ sudo dnf install -y \
   mc \
   neovim \
   nodejs \
-  ocl-icd-devel \
   perl-FindBin \
   ripgrep \
   ruby \
