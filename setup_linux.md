@@ -44,11 +44,6 @@ sudo dnf install -y \
 chsh -s /usr/bin/fish
 ```
 
-### Nvidia drivers (Fedora)
-```
-sudo dnf install -y akmod-nvidia xorg-x11-drv-nvidia-cuda
-```
-
 ### tmux
 Plugins manager:
 ```
