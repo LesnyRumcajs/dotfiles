@@ -20,6 +20,7 @@ sudo dnf install -y \
   docker-compose-plugin \
   fd-find \
   fish \
+  git-delta \
   golang \
   hexyl \
   htop \
