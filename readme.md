@@ -18,4 +18,4 @@ command = "delta"
 args = ["--color-only", "--features", "line-numbers", "--line-numbers", "--paging", "never"]
 ```
 
-Other setup steps can be found [here](setup.md).
+Other setup steps can be found [here](setup_linux.md).
