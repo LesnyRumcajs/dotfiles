@@ -33,6 +33,7 @@ sudo dnf install -y \
   perl-FindBin \
   ripgrep \
   ruby \
+  ruby-devel \
   starship \
   tealdeer \
   tmux \
