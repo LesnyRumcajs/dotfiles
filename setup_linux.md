@@ -11,6 +11,7 @@ sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/do
 sudo dnf group install -y c-development development-tools
 sudo dnf install -y \
   alacritty \
+  aria2 \
   bat \
   bottom \
   clang-devel \
