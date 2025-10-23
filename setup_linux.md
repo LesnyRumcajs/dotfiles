@@ -25,6 +25,7 @@ sudo dnf install -y \
   golang \
   hexyl \
   htop \
+  hwloc-devel \
   lsd \
   luarocks \
   meld \
@@ -33,6 +34,7 @@ sudo dnf install -y \
   nodejs \
   perl-FindBin \
   ripgrep \
+  rocm-opencl-devel \
   ruby \
   ruby-devel \
   starship \
