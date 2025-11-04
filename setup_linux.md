@@ -14,6 +14,7 @@ sudo dnf install -y \
   aria2 \
   bat \
   bottom \
+  btop \
   clang-devel \
   cmake \
   containerd.io \
