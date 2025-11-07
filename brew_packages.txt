@@ -3,6 +3,7 @@ bottom
 broot
 chezmoi
 delta
+eza
 fd
 fish
 fnm

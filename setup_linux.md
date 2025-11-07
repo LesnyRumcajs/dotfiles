@@ -74,7 +74,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 cargo binaries
 ```
-cargo install cargo-watch cargo-edit cargo-audit cargo-generate sd
+cargo install cargo-watch cargo-edit cargo-audit cargo-generate sd eza
 ```
 
 wasm-pack
