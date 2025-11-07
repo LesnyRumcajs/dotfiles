@@ -10,6 +10,7 @@ set -gx PATH "$HOME/.local/bin" $PATH
 set -gx PATH "$HOME/go/bin" $PATH
 
 alias v="nvim"
+alias ls="eza --long --git --icons"
 
 zoxide init fish | source
 starship init fish | source
