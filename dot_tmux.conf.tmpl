@@ -8,15 +8,18 @@ set -g focus-events on
 setw -g mode-keys vi
 bind-key -Tcopy-mode-vi 'v' send -X begin-selection
 
-if-shell "uname | grep -q Darwin" "source-file ~/.tmux.mac.conf" "source-file ~/.tmux.linux.conf"
-bind-key -Tcopy-mode-vi Escape send -X cancel
+{{ if eq .chezmoi.os "linux" }}
+# system clipboard Linux
+bind C-c run "tmux save-buffer - | xclip -i -sel clipboard"
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+{{ else }}
+# system clipboard MacOS
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'reattach-to-user-namespace pbcopy'
+{{ end }}
+
 unbind p
 bind p paste-buffer
 unbind -Tcopy-mode-vi Enter
-
-
-# system clipboard Linux
-# bind C-c run "tmux save-buffer - | xclip -i -sel clipboard"
 
 # synchronize panes toggle for simultanously applying the same command in multiple panes
 bind C-s set-window-option synchronize-panes
