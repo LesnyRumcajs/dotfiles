@@ -28,8 +28,7 @@ Random things I spent way too much time figuring out so I'd rather not repeat th
   route-nopull
   route 0.0.0.0 128.0.0.0
   ```
-8. Put it in a similar place in that file.
+8. Put it in a similar place in that file. Move it to remote's `/etc/openvpn/client.conf`
 9. Put the OpenVPN / IKEv2 credentials (newline delimited) in `/etc/openvpn/pass.txt`. `chmod 0600 /etc/openvpn/pass.txt`.
 10. `systemctl enable --now openvpn@client`
-11. Move it to remote's `/etc/openvpn/client.conf`
-12. Check VPN assigned IP address via `curl https://ipinfo.io/ip`
+11. Check VPN assigned IP address via `curl https://ipinfo.io/ip`
